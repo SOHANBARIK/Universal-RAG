@@ -139,6 +139,32 @@ def get_rag_chain(vectorstore):
 
     return rag_chain
 
+# --- UI STYLING ---
+st.markdown(
+    """
+    <style>
+        body { background-color:rgb(1, 1, 1); color: white; font-family: 'Arial', sans-serif; }
+        .stApp { background-color:rgb(1, 1, 1); }
+        .fixed-top-left {
+            position: fixed; top: 10px; left: 10px; font-size: 14px; font-weight: bold;
+            color: white; background-color:rgb(0, 0, 0); padding: 5px 10px;
+            border-radius: 5px; z-index: 1000;
+        }
+        .fixed-bottom {
+            position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);
+            font-size: 12px; color: white; background-color:rgb(0, 0, 0);
+            padding: 5px 10px; border-radius: 5px; z-index: 1000;
+        }
+        .message-box { padding: 15px; border-radius: 10px; margin: 10px 0; }
+        .user-message { background-color:rgb(153, 150, 242); text-align: right; border: 1px solid #ffffff; color: black; }
+        .ai-message { background-color: #ffffff; text-align: left; color: black; border: 1px solid #ffffff; }
+        .stTextInput input { color: white; border: 1px solid #444; }
+    </style>
+    <div class="fixed-top-left">AI Chatbot (LangSmith Active)</div>
+    <div class="fixed-bottom">Made with ❤️ from Sohan</div>
+    """,
+    unsafe_allow_html=True
+)
 
 # --- MAIN APP LOGIC ---
 
