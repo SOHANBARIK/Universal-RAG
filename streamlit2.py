@@ -17,7 +17,7 @@ else:
     print("Warning: 'Langchain_Key' not found in .env. LangSmith tracing is disabled.")
 
 # Streamlit Page Config
-st.set_page_config(page_title="Universal RAG Chatbot", layout="wide")
+st.set_page_config(page_title="Universal RAG Chatbot", layout="wide", initial_sidebar_state="expanded", page_icon="❓")
 st.title("🤖 Gemini RAG: Chat with PDF, Website, or YouTube")
 
 # --- 2. IMPORTS (Keep these after config) ---
