@@ -48,7 +48,7 @@ source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF
     if source_type == "Website URL":
         url_input = st.text_input("Enter Website URL")
     #elif source_type == "YouTube URL":
-        url_input = st.text_input("Enter YouTube Video URL")
+        #url_input = st.text_input("Enter YouTube Video URL")
     elif source_type == "PDF Document":
         uploaded_file = st.file_uploader("Upload PDF", type="pdf")
 
