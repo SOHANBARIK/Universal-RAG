@@ -18,7 +18,7 @@ else:
 
 # Streamlit Page Config
 st.set_page_config(page_title="Universal RAG Chatbot", layout="wide", initial_sidebar_state="expanded", page_icon="❓")
-st.title("🤖 Gemini RAG: Chat with PDF, Website, or YouTube")
+st.title("🤖 Universal RAG: Chat with PDF, Website, or YouTube")
 
 # --- 2. IMPORTS (Keep these after config) ---
 from langchain_core.output_parsers import StrOutputParser
