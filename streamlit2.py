@@ -40,7 +40,7 @@ with st.sidebar:
         st.error("⚠️ Google_API_KEY missing in .env")
     
     #source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF Document"))
-    source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF Document"))
+    source_type = st.radio("Select Input Type:", ("Website URL", "PDF Document"))
 
     url_input = ""
     uploaded_file = None
