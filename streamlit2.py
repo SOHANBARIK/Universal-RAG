@@ -39,14 +39,15 @@ with st.sidebar:
     if not api_key:
         st.error("⚠️ Google_API_KEY missing in .env")
     
-    source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF Document"))
+    #source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF Document"))
+source_type = st.radio("Select Input Type:", ("Website URL", "YouTube URL", "PDF Document"))
 
     url_input = ""
     uploaded_file = None
 
     if source_type == "Website URL":
         url_input = st.text_input("Enter Website URL")
-    elif source_type == "YouTube URL":
+    #elif source_type == "YouTube URL":
         url_input = st.text_input("Enter YouTube Video URL")
     elif source_type == "PDF Document":
         uploaded_file = st.file_uploader("Upload PDF", type="pdf")
