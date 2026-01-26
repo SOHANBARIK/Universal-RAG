@@ -51,7 +51,7 @@ with st.sidebar:
     
     # Data Source Selection
     st.header("📂 Data Source")
-    source_type = st.radio("Select Input Type:", ("Web Search (Tavily)", "Website URL", "YouTube URL", "PDF Document"))
+    source_type = st.radio("Select Input Type:", ("Web Search", "Website URL", "YouTube URL", "PDF Document"))
 
     url_input = ""
     uploaded_file = None
