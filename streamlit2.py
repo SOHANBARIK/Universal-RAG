@@ -62,16 +62,26 @@ def get_vectorstore_from_url(url, source_type):
         if source_type == "Website URL":
             loader = WebBaseLoader(url)
         elif source_type == "YouTube URL":
-            loader = YoutubeLoader.from_youtube_url(url, add_video_info=False)
+            # 🔧 FIX: Check for multiple languages and translation
+            loader = YoutubeLoader.from_youtube_url(
+                url,
+                add_video_info=False,  # Keep False to avoid Pytube errors
+                language=["en", "hi", "bn", "es", "ur"],  # Prioritize languages (English, Hindi, Bengali, etc.)
+                translation="en"  # Optional: Translate non-English transcripts to English
+            )
         
         docs = loader.load()
+        
+        # Check if documents were actually loaded
+        if not docs:
+            st.error("No content found. The video might not have captions.")
+            return None
         
         # Split text into chunks
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         split_docs = text_splitter.split_documents(docs)
         
         # Create Embeddings & Vector Store
-        # CRITICAL FIX: Using 'text-embedding-004' to avoid Limit 0 errors
         embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=api_key)
         vectorstore = FAISS.from_documents(split_docs, embeddings)
         return vectorstore
