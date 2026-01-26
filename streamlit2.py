@@ -33,19 +33,19 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 
 # --- SIDEBAR: SETTINGS ---
 with st.sidebar:
-    st.header("🔑 API Keys")
+    st.header(" If you are using a YouTube URL - Please select that video which has captions enabled.")
     
     # 1. Google API Key
     api_key = os.getenv("Google_API_KEY")
-    if not api_key:
-        api_key = st.text_input("Google API Key", type="password")
+    # if not api_key:
+    #     api_key = st.text_input("Google API Key", type="password")
     
     # 2. Tavily API Key
     tavily_key = os.getenv("TAVILY_API_KEY")
-    if not tavily_key:
-        tavily_key = st.text_input("Tavily API Key", type="password")
-        if tavily_key:
-            os.environ["TAVILY_API_KEY"] = tavily_key
+    # if not tavily_key:
+    #     tavily_key = st.text_input("Tavily API Key", type="password")
+    #     if tavily_key:
+    #         os.environ["TAVILY_API_KEY"] = tavily_key
 
     st.divider()
     
