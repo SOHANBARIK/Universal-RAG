@@ -56,7 +56,9 @@ with st.sidebar:
     url_input = ""
     uploaded_file = None
 
-    if source_type == "Website URL":
+    if source_type == "Web Search":
+        url_input = st.text_input("Enter Search Topic", placeholder="e.g., Latest updates in AI technology")
+    elif source_type == "Website URL":
         url_input = st.text_input("Enter Website URL")
     elif source_type == "YouTube URL":
         url_input = st.text_input("Enter YouTube Video URL")
