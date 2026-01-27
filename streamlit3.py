@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 # --- 1. CONFIGURATION & SETUP ---
 load_dotenv()
 
+model = os.getenv("MODEL_NAME")
 # LangSmith Configuration (Optional)
 if os.getenv("LANGCHAIN_KEY"):
     os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_KEY")
@@ -157,7 +158,7 @@ def get_vectorstore_from_pdf(pdf_file):
 def get_rag_chain(vectorstore):
     """Creates the Chain."""
     # Using specific model name to avoid 404 errors
-    llm = ChatGoogleGenerativeAI(model="gemini-3-flash-preview", google_api_key=api_key)
+    llm = ChatGoogleGenerativeAI(model=model, google_api_key=api_key)
     
     retriever = vectorstore.as_retriever()
     
