@@ -9,7 +9,7 @@ load_dotenv()
 model = os.getenv("MODEL_NAME")
 # LangSmith Configuration (Optional)
 if os.getenv("LANGCHAIN_KEY"):
-    os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_KEY")
+    os.environ["LANGCHAIN_KEY"] = os.getenv("LANGCHAIN_KEY")
     os.environ["LANGCHAIN_TRACING_V2"] = "true"
     os.environ["LANGCHAIN_PROJECT"] = os.getenv("PROJECT_NAME")
 
