@@ -77,7 +77,7 @@ def get_vectorstore_from_url(input_text, source_type):
                 return None
                 
             st.info(f"🔍 Searching the web for: '{input_text}'...")
-            search = TavilySearchResults(max_results=5)
+            search = TavilySearchResults(max_results=10)
             results = search.invoke(input_text)
             
             # Tavily returns a list of dictionaries with 'content' and 'url'
