@@ -32,9 +32,32 @@ from youtube_transcript_api import TranscriptsDisabled, NoTranscriptFound
 from langchain_community.document_loaders import WebBaseLoader, PyPDFLoader, YoutubeLoader
 from langchain_community.tools.tavily_search import TavilySearchResults
 
+st.markdown(
+    """
+    <style>
+        .fixed-bottom {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: white;
+            background-color:rgb(0, 0, 0);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
+    <div class="fixed-bottom">made with ❤️ from Sohan </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- SIDEBAR: SETTINGS ---
 with st.sidebar:
-    st.header(" If you are using a YouTube URL - Please select that video which has captions enabled.")
+    # st.header(" If you are using a YouTube URL - Please select that video which has captions enabled.")
+    st.header("⚙️ Configuration")
+    st.markdown("Select your data source and provide necessary inputs.")
     api_key = os.getenv("Google_API_KEY")
     tavily_key = os.getenv("TAVILY_API_KEY")
 
