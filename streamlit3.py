@@ -210,6 +210,7 @@ def get_rag_chain(vectorstore):
 #     <div class="fixed-bottom">Powered by Gemini & Tavily</div>
 #     """, unsafe_allow_html=True)
 
+
 # --- MAIN APP LOGIC ---
 
 if "chat_history" not in st.session_state:
