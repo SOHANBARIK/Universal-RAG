@@ -201,14 +201,14 @@ def get_rag_chain(vectorstore):
     return rag_chain
 
 # --- UI STYLING ---
-st.markdown("""
-    <style>
-        body { background-color: #0E1117; color: white; }
-        .stTextInput input { color: white; border: 1px solid #444; }
-        .fixed-bottom { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #888; }
-    </style>
-    <div class="fixed-bottom">Powered by Gemini & Tavily</div>
-    """, unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#         body { background-color: #0E1117; color: white; }
+#         .stTextInput input { color: white; border: 1px solid #444; }
+#         .fixed-bottom { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #888; }
+#     </style>
+#     <div class="fixed-bottom">Powered by Gemini & Tavily</div>
+#     """, unsafe_allow_html=True)
 
 # --- MAIN APP LOGIC ---
 
